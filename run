@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euxo pipefail
+pwgen -s 64 > /tmp/blowfish-secret
+exec apachectl \
+    -d /etc/apache2 \
+    -f apache2.conf \
+    -e info \
+    -DFOREGROUND
