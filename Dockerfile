@@ -16,6 +16,11 @@ RUN curl https://files.phpmyadmin.net/phpMyAdmin/${pma_version}/phpMyAdmin-${pma
 
 COPY apache2/ /etc/apache2/
 COPY config.inc.php /opt/pma/
-COPY run /opt/
 
-CMD ["/opt/run"]
+CMD [ \
+    "apachectl", \
+    "-d", "/etc/apache2", \
+    "-f", "apache2.conf", \
+    "-e", "info", \
+    "-DFOREGROUND" \
+]
