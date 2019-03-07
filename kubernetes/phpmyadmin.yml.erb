@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: phpmyadmin-service
+  name: service
 spec:
   selector:
     app: phpmyadmin
@@ -12,7 +12,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: phpmyadmin-deployment
+  name: deployment
   labels:
     app: phpmyadmin
 spec:
@@ -26,12 +26,12 @@ spec:
         app: phpmyadmin
     spec:
       containers:
-        - name: phpmyadmin-deploy
+        - name: phpmyadmin
           image: "docker.ocf.berkeley.edu/pma:<%= version %>"
           resources:
             limits:
               memory: 1Gi
-              cpu: 175m
+              cpu: 750m
           ports:
             - containerPort: 8000
       dnsPolicy: ClusterFirst
@@ -45,9 +45,9 @@ metadata:
   name: virtual-host-ingress
 spec:
   rules:
-    - host: dev-pma.ocf.berkeley.edu
+    - host: pma.dev-kubernetes.ocf.berkeley.edu
       http:
         paths:
           - backend:
-              serviceName: phpmyadmin-service
+              serviceName: service
               servicePort: 80
