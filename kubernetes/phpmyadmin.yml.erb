@@ -16,7 +16,9 @@ metadata:
   labels:
     app: phpmyadmin
 spec:
-  replicas: 3
+  # Increasing the number of replicas will break sessions!
+  # TODO: figure out how to make PMA sessions sticky
+  replicas: 1
   selector:
     matchLabels:
       app: phpmyadmin
