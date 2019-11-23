@@ -3,7 +3,7 @@ DOCKER_TAG = docker-push.ocf.berkeley.edu/pma:$(DOCKER_REVISION)
 RANDOM_PORT := $(shell expr $$(( 8000 + (`id -u` % 1000) + 2 )))
 
 # Find the latest via the big green button at https://phpmyadmin.net/
-PMA_VERSION := 4.9.1
+PMA_VERSION := 4.9.2
 
 .PHONY: dev
 dev: cook-image
