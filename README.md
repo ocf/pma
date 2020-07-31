@@ -1,6 +1,6 @@
 pma
 --------
-[![Build Status](https://jenkins.ocf.berkeley.edu/buildStatus/icon?job=ocf/pma/master)](https://jenkins.ocf.berkeley.edu/job/ocf/job/pmajob/master/)
+[![Build Status](https://jenkins.ocf.berkeley.edu/buildStatus/icon?job=ocf/pma/master)](https://jenkins.ocf.berkeley.edu/job/ocf/job/pma/job/master)
 
 This is the OCF's Marathon service for [phpMyAdmin][pma].
 
