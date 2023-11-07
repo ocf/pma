@@ -28,7 +28,7 @@ def objects():
         path_prefix="/",
     )
 
-    dns = {"dnsPolicy": "ClusterFirst", "dnsConfig": {"searches": "ocf.berkeley.edu"}}
+    dns = {'dnsPolicy': 'ClusterFirst', 'dnsConfig': {'searches': ['ocf.berkeley.edu']}}
 
     # add dnsPolicy and dnsConfig to deployment
     yield surgery.shelve(
